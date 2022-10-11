@@ -5,6 +5,57 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Button from '@mui/material/Button';
+import { TlTitle2 } from "../titles/Titles";
+import { TlTextFieldTitle } from "../textfield/TextField";
+import TlComboBox from "../combobox/ComboBox";
+import { Grid, Box } from "@mui/material";
+import TlButton from "../buttons/Button";
+import { ConstantsButtons } from "../Constants";
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
+
+const data = [
+  {name: 'Test', age: 12},
+  {name: 'Test1', age: 12},
+  {name: 'Test2', age: 12},
+  {name: 'Test3', age: 12},
+  {name: 'Test4', age: 12},
+  {name: 'Test5', age: 12},
+  {name: 'Test6', age: 12},
+  {name: 'Test7', age: 12},
+  {name: 'Test8', age: 12},
+  {name: 'Test9', age: 12},
+  {name: 'Test10', age: 12},
+]
+
+export interface TlCloseButtonProps {
+  id: string;
+  children?: React.ReactNode;
+  onClose: () => void;
+}
+
+const TlCloseButton = (props: TlCloseButtonProps) => {
+  const { children, onClose, ...other} = props;
+
+  return (
+    <DialogTitle sx = {{ m: 0, p: 2 }} {...other}>
+      {children}
+      {onClose ? (
+        <IconButton
+          aria-label="close"
+          onClick = {onClose}
+          sx = {{
+            position: 'absolute',
+            right: 8,
+            top: 8,
+            color: (theme) => theme.palette.grey[500],
+          }}>
+            <CloseIcon/>
+        </IconButton>
+      ) : null}
+    </DialogTitle>
+  )
+}
 
 export function TlDialog(props:any){
     const[open, setOpen] = React.useState(false);
@@ -28,21 +79,33 @@ export function TlDialog(props:any){
             aria-labelledby="alert-dialog-title"
             aria-describedby="alert-dialog-description"
           >
-            <DialogTitle id="alert-dialog-title">
-              {"Use Google's location service?"}
-            </DialogTitle>
-            <DialogContent>
-              <DialogContentText id="alert-dialog-description">
-                Let Google help apps determine location. This means sending anonymous
-                location data to Google, even when no apps are running.
-              </DialogContentText>
-            </DialogContent>
-            <DialogActions>
-              <Button onClick={handleClose}>Disagree</Button>
-              <Button onClick={handleClose} autoFocus>
-                Agree
-              </Button>
-            </DialogActions>
+            <TlCloseButton id="" onClose={handleClose}/>
+            <Box sx={{  marginLeft: 3, marginRight: 6,  marginBottom: 3 }}>
+
+              <DialogTitle id="alert-dialog-title">
+                <TlTitle2 text="Test title"></TlTitle2>
+              </DialogTitle>
+              <DialogContent>
+                <Grid container rowSpacing={2}>
+                  <Grid item xs={12}>
+                    <TlTextFieldTitle title="Stack" placeholder="Stack"></TlTextFieldTitle>
+                  </Grid>
+                 <Grid item xs={12}>
+                    <TlComboBox data={data}></TlComboBox>
+                  </Grid>
+                  <Grid item xs={3}>
+                    <Box sx={{ marginTop: 3 }}>
+                    <TlButton label="Proceed" styles={ConstantsButtons.SuccessButton}></TlButton>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={3}>
+                    <Box sx={{ marginTop: 3 }}>
+                      <TlButton label="Cancel" styles={ConstantsButtons.CancelButon}></TlButton>
+                    </Box>
+                  </Grid>
+                </Grid>
+              </DialogContent>
+            </Box>
           </Dialog>
         </div>
       );

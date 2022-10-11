@@ -4,17 +4,18 @@ import { styled } from '@mui/material/styles';
 import Button, { ButtonProps } from '@mui/material/Button';
 
 
-export const TlButton = styled(Button)((props:any) => ({
+export const CustomButton = styled(Button)((props:any) => ({
     boxShadow: 'none',
     textTransform: 'none',
-    fontSize: 16,
+    fontSize: 14,
     padding: '6px 12px',
     border: '1px solid',
+    textDecorationLine: props.styles.decorationLine,
     lineHeight: 1.5,
-    backgroundColor: props.backgroundColor,
-    borderColor: props.borderColor,
-    borderRadius: '20px',
-    color: props.myColor,
+    backgroundColor: props.styles.backgroundColor,
+    borderColor: props.styles.borderColor,
+    borderRadius: '100px',
+    color: props.styles.myColor,
     fontFamily: [
       '-apple-system',
       'BlinkMacSystemFont',
@@ -28,16 +29,16 @@ export const TlButton = styled(Button)((props:any) => ({
       '"Segoe UI Symbol"',
     ].join(','),
     '&:hover': {
-        backgroundColor: props.backgroundHover,
-        borderColor: props.borderHover,
-        color: props.colorHover,
+        backgroundColor: props.styles.backgroundHover,
+        borderColor: props.styles.borderHover,
+        color: props.styles.colorHover,
         boxShadow: 'none',
       }
    }));
 
-export default function CustomButton(props:any){
+export default function TlButton(props:any){
     return(
-        <TlButton variant="contained"  {...props} disableRipple>{props.label}</TlButton>
+        <CustomButton variant="contained"  {...props} disableRipple>{props.label}</CustomButton>
     )
 }
 

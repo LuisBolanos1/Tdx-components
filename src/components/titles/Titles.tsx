@@ -7,9 +7,8 @@ const theme = createTheme();
 theme.typography.h4 = {
     fontFamily: "sans-serif",
     fontWeight: '100',
-    fontSize: 'xx-large',
-    display: 'block'
-    
+    fontSize: '20',
+    display: 'block',
     
 };
 

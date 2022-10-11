@@ -15,8 +15,11 @@ export default function TlComboBox(props:any){
             <Autocomplete
                 disablePortal
                 options={data.map((option:any) => option.name)}
-                sx={{ width: 300}}
-                renderInput={(params) => <TextField  placeholder="Test" {...params}/>}
+                sx={{ width: 1, 
+                    "& .MuiInputBase-root": {
+                        height: 45
+                    },}}
+                renderInput={(params) => <TlTextField  placeholder="Test" {...params}/>}
             />
         </div>
     )
