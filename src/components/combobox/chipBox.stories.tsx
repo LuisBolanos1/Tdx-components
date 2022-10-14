@@ -1,16 +1,16 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { TlComboBox } from "./ComboBox";
+import TlChipBox from "./ChipBox";
 
 export default {
     title: 'UI/ComboBox',
-    component: TlComboBox,
+    component: TlChipBox,
     argTypes: {
         backgroundColor: { control: 'color' }
     }
-} as ComponentMeta<typeof TlComboBox>
+} as ComponentMeta<typeof TlChipBox>
 
-const Template: ComponentStory<typeof TlComboBox> = (args) => <TlComboBox {...args}/>
+const Template: ComponentStory<typeof TlChipBox> = (args) => <TlChipBox {...args}/>
 
 const data = [
     {name: 'Test', age: 12},
@@ -26,7 +26,7 @@ const data = [
     {name: 'Test10', age: 12},
 ]
 
-export const PrototypeComboBox = Template.bind({});
-PrototypeComboBox.args = {
+export const PrototypeChipBox = Template.bind({});
+PrototypeChipBox.args = {
     data: data
 }

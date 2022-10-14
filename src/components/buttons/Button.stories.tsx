@@ -12,6 +12,11 @@ export default {
     }
 } as ComponentMeta<typeof TlButton>
 
+function testFunction(){
+    console.log('Hello world')
+}
+
+
 const Template: ComponentStory<typeof TlButton> = (args) => <TlButton {...args} />;
 
 export const FirstButton = Template.bind({});
@@ -37,7 +42,7 @@ AlternativeButton.args = {
         backgroundHover: '#FFFFFF',
         colorHover: '#4B286D',
         borderHover: '#4B286D'    
-    }
+    },
 }
 
 export const SuccessButton = Template.bind({});
@@ -50,7 +55,7 @@ SuccessButton.args = {
         backgroundHover: '#FFFFFF',
         colorHover: '#2B8000',
         borderHover: '#2B8000'            
-    }
+    },
 }
 
 export const RedButton = Template.bind({});
@@ -63,7 +68,7 @@ RedButton.args = {
         backgroundHover: '#C12335',
         colorHover: '#FFFFFF',
         borderHover: '#C12335'    
-    }
+    },
 }
 
 export const CancelButton = Template.bind({});
@@ -76,5 +81,5 @@ CancelButton.args = {
         backgroundHover: '#676E73',
         colorHover: '#FFFFFF',
         borderHover: '#676E73'    
-    }
+    },
 }

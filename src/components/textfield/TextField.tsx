@@ -2,6 +2,8 @@ import React from "react";
 import TextField from "@mui/material/TextField"
 import TlTitleTextField from "./TitleTextField";
 import { alpha, styled } from '@mui/material/styles';
+import { TlTitle } from "../titles/Titles";
+import { ConstantsTypography } from "../Constants";
 
 
 //border: '1px solid black', borderRadius: 1
@@ -22,7 +24,7 @@ export function TlTextField(props:any){
 export function TlTextFieldTitle(props:any){
     return(
         <div>
-            <TlTitleTextField title={props.title}></TlTitleTextField><br/> 
+            <TlTitle text={props.title} styles={ConstantsTypography.Subtitle2}></TlTitle>
             <TlTextField placeholder={props.placeholder}></TlTextField>
 
         </div>    

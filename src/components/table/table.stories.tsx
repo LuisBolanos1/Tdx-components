@@ -13,12 +13,12 @@ export default {
 const Template: ComponentStory<typeof TlTable> = (args) => <TlTable {...args}/>
 
 const rows = [
-    {name: 'asdf', age: 23 , numer: 3},
-    {name: 'asdDf', age: 23 , numer: 3},
-    {name: 'asdCCf', age: 23 , numer: 3},
-    {name: 'asdSDFf', age: 23 , numer: 3},
-    {name: 'asdCfsfsR4f', age: 23 , numer: 3},
-    {name: 'asdKJf', age: 23 , numer: 3},
+    {name: 'test1', age: 23 , numer: 3},
+    {name: 'test2', age: 23 , numer: 3},
+    {name: 'test3', age: 23 , numer: 3},
+    {name: 'test4', age: 23 , numer: 3},
+    {name: 'test5', age: 23 , numer: 3},
+    {name: 'test6', age: 23 , numer: 3},
 ]
 const titles = [ 'name', 'age', 'numer' ]
 

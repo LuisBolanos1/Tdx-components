@@ -109,8 +109,8 @@ export default function TlTable(props:any){
     };
 
     return (
-        <TableContainer component={Paper}>
-            <Table stickyHeader sx={{ minWidth: 500 }} aria-label="custom pagination table">
+        <TableContainer >
+            <Table sx={{ minWidth: 500, }} aria-label="custom pagination table">
                 <TableHead>
                     <TableRow>
                         {(props.titles).map((element:string) => (

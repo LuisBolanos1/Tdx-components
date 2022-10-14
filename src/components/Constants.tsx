@@ -1,3 +1,7 @@
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+//Buttons constanst for customization
+
 export const ConstantsButtons = {
     FirstButton: {
         label: 'First Button',
@@ -49,4 +53,72 @@ export const ConstantsButtons = {
         borderHover: '#676E73',    
         decorationLine: 'underline'    
     }
+} as const;
+
+//Dropdowns Buttons constanst for customization
+
+export const ConstantsDropdownButtons = {
+    WhiteButton: {
+        backgroundColor: '#FFFFFF',
+        color: '#414547',
+        fontSize: 16        
+    },
+    PurpleButton: {
+        backgroundColor: '#4B286D',
+        color: '#FFFFFF',
+        fontSize: 14        
+    }
+} as const;
+
+//DarkTheme
+
+export const DarkTheme= createTheme({
+    palette: {
+      background: {
+        default: "#F5F5F5"
+      }
+    }
+});
+
+//Typography constanst for customization
+
+export const ConstantsTypography = {
+    Title: {
+        color: '#4B286D',
+        transform: 'none',
+        fontSize: 36,
+        fontWeight: 24,
+        fontStyle: 'normal',
+        fontFamily: ['"Segoe UI"', 'Arial', 'sans-serif'].join(','),
+        margin: 10    
+    },
+    Title2: {
+        color: '#4B286D',
+        transform: 'none',
+        fontSize: 24,
+        fontWeight: 400,
+        fontStyle: 'normal',
+        fontFamily: ['"Segoe UI"', 'Arial', 'sans-serif'].join(','),
+        margin: 10
+    
+    },
+    Subtitle: {
+        color: '#4B286D',
+        transform: 'none',
+        fontSize: 21,
+        fontWeight: 500,
+        fontStyle: 'normal',
+        fontFamily: ['"Segoe UI"', 'Arial', 'sans-serif'].join(','),
+        margin: 10    
+    },
+    Subtitle2: {
+        color: '#000000',
+        transform: 'none',
+        fontSize: 16,
+        fontWeight: 700,
+        fontStyle: 'normal',
+        fontFamily: ['"Segoe UI"', 'Arial', 'sans-serif'].join(','),
+        margin: 10    
+    }
+
 } as const;

@@ -7,7 +7,7 @@ import TlTitleTextField from "../textfield/TitleTextField";
 
 
 
-export default function TlComboBox(props:any){
+export function TlComboBox(props:any){
     const data = props.data
     return(
         <div>
@@ -24,3 +24,4 @@ export default function TlComboBox(props:any){
         </div>
     )
 }
+

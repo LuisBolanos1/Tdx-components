@@ -38,7 +38,7 @@ export const CustomButton = styled(Button)((props:any) => ({
 
 export default function TlButton(props:any){
     return(
-        <CustomButton variant="contained"  {...props} disableRipple>{props.label}</CustomButton>
+        <CustomButton variant="contained"   {...props} disableRipple>{props.label}</CustomButton>
     )
 }
 

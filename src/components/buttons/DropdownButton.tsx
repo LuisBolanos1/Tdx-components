@@ -55,6 +55,7 @@ const StyledMenu = styled((props: MenuProps) => (
 
   export default function TlDropdownButton(props:any){
     const options = props.options;
+    const styles = props.styles;
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -66,7 +67,7 @@ const StyledMenu = styled((props: MenuProps) => (
     return (
         <div>
           <Button
-            sx={{ background: '#FFFFFF', color: '#414547', textTransform: 'none', fontSize: 16, fontFamily: 'sans-serif',
+            sx={{ background: styles.backgroundColor, color: styles.color, textTransform: 'none', fontSize: styles.fontSize, fontFamily: 'sans-serif',
             }}
             aria-controls={open ? 'demo-customized-menu' : undefined}
             aria-haspopup="true"

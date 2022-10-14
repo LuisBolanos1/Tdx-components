@@ -1,6 +1,6 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-
+import { ConstantsDropdownButtons } from "../Constants";
 import TlDropdownButton from "./DropdownButton";
 
 export default {
@@ -22,5 +22,15 @@ ProtoDropdown.args = {
     buttonTitle: 'Option test',
     options: [
         { title: 'option1', click: testFunction}, { title: 'option2', click: testFunction }, { title: 'option3', click: testFunction }
-    ]
+    ],
+    styles: ConstantsDropdownButtons.WhiteButton
+}
+
+export const Proto2Dropdown = Template.bind({});
+Proto2Dropdown.args = {
+    buttonTitle: 'Option test',
+    options: [
+        { title: 'option1', click: testFunction}, { title: 'option2', click: testFunction }, { title: 'option3', click: testFunction }
+    ],
+    styles: ConstantsDropdownButtons.PurpleButton
 }

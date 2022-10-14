@@ -5,14 +5,16 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Button from '@mui/material/Button';
-import { TlTitle2 } from "../titles/Titles";
+import { TlTitle, TlTitle2 } from "../titles/Titles";
 import { TlTextFieldTitle } from "../textfield/TextField";
-import TlComboBox from "../combobox/ComboBox";
+import { TlComboBox } from "../combobox/ComboBox";
 import { Grid, Box } from "@mui/material";
 import TlButton from "../buttons/Button";
-import { ConstantsButtons } from "../Constants";
+import { ConstantsButtons, ConstantsTypography } from "../Constants";
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
+import TlChipBox from "../combobox/ChipBox";
+
 
 const data = [
   {name: 'Test', age: 12},
@@ -67,7 +69,7 @@ export function TlDialog(props:any){
     const handleClose = () => {
         setOpen(false);
     };
-
+    
     return (
         <div>
           <Button variant="outlined" onClick={handleClickOpen}>
@@ -83,24 +85,25 @@ export function TlDialog(props:any){
             <Box sx={{  marginLeft: 3, marginRight: 6,  marginBottom: 3 }}>
 
               <DialogTitle id="alert-dialog-title">
-                <TlTitle2 text="Test title"></TlTitle2>
+                <TlTitle text="Test title 2" styles={ConstantsTypography.Subtitle}></TlTitle>
               </DialogTitle>
               <DialogContent>
-                <Grid container rowSpacing={2}>
+                <Grid container rowSpacing={1}>
                   <Grid item xs={12}>
                     <TlTextFieldTitle title="Stack" placeholder="Stack"></TlTextFieldTitle>
                   </Grid>
                  <Grid item xs={12}>
-                    <TlComboBox data={data}></TlComboBox>
+                    {/* <TlComboBox data={data}></TlComboBox> */}
+                    <TlChipBox data={data}></TlChipBox>
                   </Grid>
                   <Grid item xs={3}>
                     <Box sx={{ marginTop: 3 }}>
-                    <TlButton label="Proceed" styles={ConstantsButtons.SuccessButton}></TlButton>
+                    <TlButton label="Proceed" styles={ConstantsButtons.SuccessButton} ></TlButton>
                     </Box>
                   </Grid>
                   <Grid item xs={3}>
                     <Box sx={{ marginTop: 3 }}>
-                      <TlButton label="Cancel" styles={ConstantsButtons.CancelButon}></TlButton>
+                      <TlButton label="Cancel" styles={ConstantsButtons.CancelButon} onClick={handleClose}></TlButton>
                     </Box>
                   </Grid>
                 </Grid>

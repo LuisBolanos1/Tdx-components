@@ -12,9 +12,4 @@ export default {
 
 const Template: ComponentStory<typeof TlTitle2> = (args) => <TlTitle2 {...args}/>
 
-export const PrototypeTitle2 = Template.bind({});
-PrototypeTitle2.args = {
-    text: 'Test title'
-}
-
 

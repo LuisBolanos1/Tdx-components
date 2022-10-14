@@ -12,9 +12,3 @@ export default {
 
 const Template: ComponentStory<typeof TlSubtitle1> = (args) => <TlSubtitle1 {...args}/>
 
-export const PrototypeSubtitle = Template.bind({});
-PrototypeSubtitle.args = {
-    text: 'Test subtitle'
-}
-
-
